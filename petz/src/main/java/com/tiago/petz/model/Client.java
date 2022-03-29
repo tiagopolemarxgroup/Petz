@@ -7,15 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
-@Data
-@Table(name = "client")
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "tb_client")
 public class Client {
 
 	@Id
@@ -25,5 +18,41 @@ public class Client {
 	private String name;
 	@NotBlank(message = "Name is required")
 	private String email;
-	
+
+	public Client() {
+
+	}
+
+	public Client(Long id, @NotBlank(message = "Name is required") String name,
+			@NotBlank(message = "Name is required") String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }

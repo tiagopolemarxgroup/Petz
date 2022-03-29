@@ -1,4 +1,4 @@
-package com.tiago.petz.service;
+package com.tiago.petz.controller;
 
 import java.util.List;
 
@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tiago.petz.model.Client;
 import com.tiago.petz.request.ClientRequest;
+import com.tiago.petz.service.ClientService;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/clients")
 public class ClientController {
 
 	@Autowired
